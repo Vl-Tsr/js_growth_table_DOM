@@ -35,29 +35,10 @@ function buttonCondition() {
   const rowCount = [...document.querySelectorAll('table tr')].length;
   const colCount = document.querySelector('tr').children.length;
 
-  if (rowCount === 10) {
-    addRowBtn.disabled = true;
-  } else {
-    addRowBtn.disabled = false;
-  }
-
-  if (rowCount === 2) {
-    deleteRowBtn.disabled = true;
-  } else {
-    deleteRowBtn.disabled = false;
-  }
-
-  if (colCount === 10) {
-    addColBtn.disabled = true;
-  } else {
-    addColBtn.disabled = false;
-  }
-
-  if (colCount === 2) {
-    deleteColBtn.disabled = true;
-  } else {
-    deleteColBtn.disabled = false;
-  }
+  addRowBtn.disabled = rowCount === 10;
+  deleteRowBtn.disabled = rowCount === 2;
+  addColBtn.disabled = colCount === 10;
+  deleteColBtn.disabled = colCount === 2;
 }
 
 document.addEventListener('click', buttonCondition);
